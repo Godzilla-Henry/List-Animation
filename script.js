@@ -1,7 +1,15 @@
+$(window).scroll(function() {
+    if ($("#bar").offset().top > 120) {
+        $("#nav").addClass("scroll");
+    } else {
+        $("#nav").removeClass("scroll");
+    }
+});
+
 // HTML DOM 元件渲染完成後才執行以下FUNC
 $(document).ready(function(){
     // 背景的大小
-    var screenWidth = "scale(60)";
+    var screenWidth = "scale(55)";
 
     // Jquery 切換toggle
     $.fn.clickToggle = function(func1, func2) {
@@ -37,10 +45,6 @@ $(document).ready(function(){
                 "animation-duration" : "0.5s",
                 "display" : "block"
             });
-            $('#menu-txt li').css({
-                "animation-name" : "liAni",
-                "animation-duration" : "0.5s"
-            });  
         },
         /*OPEN END==============================*/
         

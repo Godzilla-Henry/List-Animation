@@ -1,33 +1,58 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('./LeagueSpartan-Bold.otf');
+}
+
 body{
-    background:#3d6196;
+    background:#f3f3f3;
     padding:0;
     margin:0;
+    font-family: 'MyFont';
+    text-align: center;
 }
 
 /* NAVBAR */
-#bar{
-    background:#456aa2;
+#nav #bar{
+    background:transparent;
+    border-bottom: 1px solid #646464;
     height:90px;
     width:100%;
     position:fixed;
     top:0;
     z-index:-2;
+    -webkit-transition: background .5s ease-in-out, height .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out, height .5s ease-in-out;
+    transition: background .5s ease-in-out, height .5s ease-in-out;
 }
 
-/* 選單 */
-ul {
-    list-style-type: none;
-    color:#7299cc;
-    font-size:18px;
-    letter-spacing:.2em;
-    cursor:none;
-    width:300px;
-    text-align:center;
-    padding-left:0;
-    display:none;
+#nav #bar .bar-text{
+    font-size: 35px;
+    color: rgb(87, 87, 87);
+    margin-top: 25px;
+    letter-spacing: .2em;
 }
 
-#menu-btn{
+#nav.scroll #bar{
+    background:#646464;
+    height:60px;
+    width:100%;
+    position:fixed;
+    top:0;
+    z-index:-2;
+    -webkit-transition: background .5s ease-in-out, height .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out, height .5s ease-in-out;
+    transition: background .5s ease-in-out, height .5s ease-in-out;
+}
+
+#nav.scroll #bar .bar-text{
+    font-size: 25px;
+    color: rgb(230, 230, 230);
+    margin-top: 20px;
+    letter-spacing: .2em;
+}
+
+/* 選單按鈕 */
+#nav #menu-btn{
     position:fixed;
     border:none;
     padding:0;
@@ -40,21 +65,7 @@ ul {
     background:none;
 }
 
-.menu{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
-}
-
-#menu-btn li{
-    margin-top:1em;
-    cursor: pointer;
-}
-
-/* 選單按鈕 */
-#nav-icon {
+#nav #nav-icon {
     width: 60px;
     height: 45px;
     left:15px;
@@ -70,12 +81,12 @@ ul {
     cursor: pointer;
 }
 
-#nav-icon span {
+#nav #nav-icon span {
     display: block;
     position: absolute;
     height: 9px;
     width: 100%;
-    background: white;
+    background: rgb(48, 48, 48);
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -89,7 +100,7 @@ ul {
     transition: .25s ease-in-out;
 }
 
-#nav-icon span:nth-child(1) {
+#nav #nav-icon span:nth-child(1) {
     top: 0px;
     -webkit-transform-origin: left center;
     -moz-transform-origin: left center;
@@ -97,7 +108,7 @@ ul {
     transform-origin: left center;
 }
 
-#nav-icon span:nth-child(2) {
+#nav #nav-icon span:nth-child(2) {
     top: 18px;
     -webkit-transform-origin: left center;
     -moz-transform-origin: left center;
@@ -105,12 +116,111 @@ ul {
     transform-origin: left center;
 }
 
-#nav-icon span:nth-child(3) {
+#nav #nav-icon span:nth-child(3) {
     top: 36px;
     -webkit-transform-origin: left center;
     -moz-transform-origin: left center;
     -o-transform-origin: left center;
     transform-origin: left center;
+}
+
+#nav.scroll #menu-btn{
+    position:fixed;
+    border:none;
+    padding:0;
+    height:60px;
+    width:60px;
+    left:0px;
+    top:0px;
+    cursor:pointer;
+    z-index:0;
+    background:none;
+}
+
+#nav.scroll #nav-icon {
+    width: 40px;
+    height: 30px;
+    left:15px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav.scroll #nav-icon span {
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background: rgb(228, 228, 228);
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#nav.scroll #nav-icon span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav.scroll #nav-icon span:nth-child(2) {
+    top: 12px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav.scroll #nav-icon span:nth-child(3) {
+    top: 24px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+/* 選單 */
+ul {
+    list-style-type: none;
+    color:#7299cc;
+    font-size:18px;
+    letter-spacing:.2em;
+    line-height: 3em;
+    cursor:none;
+    width:300px;
+    text-align:center;
+    padding-left:0;
+    display:none;
+}
+
+.menu{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+#menu-txt li{
+    margin-top:1em;
+    cursor: pointer;
 }
 
 /* 選單背景(白色) */
@@ -123,7 +233,7 @@ ul {
     z-index:-1;
     width: 50px;
     height: 50px;
-    background-color: white;
+    background-color: rgb(234, 234, 234);
     opacity:0;
 }
 
@@ -139,15 +249,88 @@ ul {
     z-index:-5;
 }
 
+/* Grid --------------------------------------------*/
 .inner{
-    background:rgba(0,0,0,.2);
-    width:100%;
-    height:50vh;
-    border-radius:10px;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(12, 150px);
+    /* Align center */
+    margin: 0 auto;
+    max-width: 90%;
+    padding: 3rem 0;
+}
+
+/* Grid images --------------------------------------------*/
+.img {
+    border-radius: 1rem;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Grid items --------------------------------------------*/
+.item-4 {
+    grid-row: 2/5;
+}
+
+.item-5 {
+    grid-row: 2/6;
+}
+
+.item-6 {
+    grid-row: 2/4;
+}
+
+.item-7 {
+    grid-row: 5/6;
+}
+
+.item-8 {
+    grid-row: 4/6;
+}
+
+.item-9 {
+    grid-row: 6/11;
+}
+
+.item-10 {
+    grid-row: 6/7;
+}
+
+.item-11 {
+    grid-row: 6/9;
+}
+
+.item-12 {
+    grid-row: 7/12;
+}
+
+.item-13 {
+    grid-row: 9/13;
+}
+
+.item-14 {
+    grid-row: 11/13;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    background-color: #313131;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    width: 100%;
+    z-index:-5;
+}
+
+.footer-text {
+    color: #fff;
+    font-size: 1.5rem;
 }
 
 /* 開啟後的按鈕 */
-#nav-icon.open span:nth-child(1) {
+#nav #nav-icon.open span:nth-child(1) {
     background: #7299cc;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -157,12 +340,12 @@ ul {
     left: 8px;
 }
 
-#nav-icon.open span:nth-child(2) {
+#nav #nav-icon.open span:nth-child(2) {
     width: 0%;
     opacity: 0;
 }
 
-#nav-icon.open span:nth-child(3) {
+#nav #nav-icon.open span:nth-child(3) {
     background: #7299cc;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
@@ -170,6 +353,31 @@ ul {
     transform: rotate(-45deg);
     top: 39px;
     left: 8px;
+}
+
+#nav.scroll #nav-icon.open span:nth-child(1) {
+    background: #7299cc;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -2px;
+    left: 6px;
+}
+
+#nav.scroll #nav-icon.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+#nav.scroll #nav-icon.open span:nth-child(3) {
+    background: #7299cc;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 26px;
+    left: 6px;
 }
 
 button:focus {outline:0;}
@@ -184,12 +392,6 @@ button:focus {outline:0;}
         opacity: 1;
     }
 }
-
-@keyframes liAni {
-    from {  margin-top:-1em;}
-    to {  margin-top:1em;}
-}
-
 
 
 
