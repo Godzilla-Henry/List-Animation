@@ -23,3 +23,29 @@
 * transform-origin
     - 設定物件變形的起始點
 * @keyframes 動畫名稱{...//do something animation}
+
+## JS 使用
+```javascript=
+    // Jquery 切換toggle
+    $.fn.clickToggle = function(func1, func2) {
+        var funcs = [func1, func2];
+        this.data('toggleclicked', 0);
+        this.click(function() {
+            var data = $(this).data();
+            var tc = data.toggleclicked;
+            $.proxy(funcs[tc], this)();
+            data.toggleclicked = (tc + 1) % 2;
+        });
+        return this;
+    };
+
+    $('#menu-btn').clickToggle(
+        function() {
+            function1...
+        },
+        
+        function() {
+            function2...
+        }
+    );
+```
