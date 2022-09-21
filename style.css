@@ -199,7 +199,7 @@ body{
 /* 選單 */
 ul {
     list-style-type: none;
-    color:#7299cc;
+    color:rgb(87, 87, 87);
     font-size:18px;
     letter-spacing:.2em;
     line-height: 3em;
@@ -221,7 +221,14 @@ ul {
 #menu-txt li{
     margin-top:1em;
     cursor: pointer;
+    transition: font-size .2s;
 }
+
+#menu-txt li:hover{
+    font-size: 30px;
+}
+
+
 
 /* 選單背景(白色) */
 .ripple{
@@ -331,7 +338,7 @@ ul {
 
 /* 開啟後的按鈕 */
 #nav #nav-icon.open span:nth-child(1) {
-    background: #7299cc;
+    background: rgb(87, 87, 87);
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
@@ -346,7 +353,7 @@ ul {
 }
 
 #nav #nav-icon.open span:nth-child(3) {
-    background: #7299cc;
+    background: rgb(87, 87, 87);
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
@@ -356,7 +363,7 @@ ul {
 }
 
 #nav.scroll #nav-icon.open span:nth-child(1) {
-    background: #7299cc;
+    background: rgb(87, 87, 87);
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
@@ -371,7 +378,7 @@ ul {
 }
 
 #nav.scroll #nav-icon.open span:nth-child(3) {
-    background: #7299cc;
+    background: rgb(87, 87, 87);
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
